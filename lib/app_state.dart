@@ -71,6 +71,12 @@ class FFAppState extends ChangeNotifier {
     _selectedCompare = _value;
   }
 
+  int _intgers = 0;
+  int get integers => _intgers;
+  set integers(int _value) {
+    _intgers = _value;
+  }
+
   List<PlansStruct> _compare = [
     PlansStruct.fromSerializableMap(jsonDecode(
         '{\"name\":\"\",\"date\":\"\",\"updates\":\"\",\"string\":\"\",\"img\":\"\",\"selectedImg\":\"\"}')),
