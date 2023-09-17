@@ -59,6 +59,12 @@ class FFAppState extends ChangeNotifier {
     _selectedIndex = _value;
   }
 
+  String _firstName = '';
+  String get firstName => _firstName;
+  set firstName(String _value) {
+    _firstName = _value;
+  }
+
   int _selectedCompare = 1;
   int get selectedCompare => _selectedCompare;
   set selectedCompare(int _value) {
