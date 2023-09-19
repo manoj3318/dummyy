@@ -107,7 +107,7 @@ class _CompareWidgetState extends State<CompareWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 16.0, 16.0, 16.0),
                                       child: Text(
-                                        compareListItem.name,
+                                        compareListItem.value.name,
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium,
                                       ),

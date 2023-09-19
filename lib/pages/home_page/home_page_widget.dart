@@ -310,12 +310,19 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                     onPressed: () async {
                       _model.apiResulttgn = await SampleCall.call();
                       if ((_model.apiResulttgn?.succeeded ?? true)) {
-                        _model.lIst = await actions.convertJsonToDataType(
-                          (_model.apiResulttgn?.jsonBody ?? []),
-                        );
+                        // _model.lIst = await actions.convertJsonToDataType(
+                        //   (_model.apiResulttgn?.jsonBody ?? ''),
+                        // );
+                        // ignore: unused_local_variable
+                        List<dynamic> response = _model.apiResulttgn?.jsonBody;
+                        var jsonBody = json.decode(response.toString());
+                        for (var data in jsonBody) {
+                          List<Plans1Struct> listOfData = [];
+                          listOfData.add(Plans1Struct.fromMap(data));
+                        }
                         setState(() {
                           FFAppState().plansList =
-                              _model.lIst!.toList().cast<PlansStruct>();
+                              _model.lIst!.toList().cast<Plans1Struct>();
                         });
 
                         context.pushNamed('screen');

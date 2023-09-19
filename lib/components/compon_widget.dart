@@ -15,7 +15,7 @@ class ComponWidget extends StatefulWidget {
     this.list,
   }) : super(key: key);
 
-  final List<PlansStruct>? list;
+  final List<Plans1Struct>? list;
 
   @override
   _ComponWidgetState createState() => _ComponWidgetState();
@@ -92,7 +92,7 @@ class _ComponWidgetState extends State<ComponWidget> {
                                 size: 24.0,
                               ),
                               Text(
-                                plansItem.name,
+                                plansItem.value.name,
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(

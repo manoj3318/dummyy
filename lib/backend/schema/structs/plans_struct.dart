@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import '/backend/schema/util/firestore_util.dart';
 import '/backend/schema/util/schema_util.dart';
 
+import 'index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
 class PlansStruct extends FFFirebaseStruct {
@@ -71,7 +72,7 @@ class PlansStruct extends FFFirebaseStruct {
   static PlansStruct? maybeFromMap(dynamic data) =>
       data is Map<String, dynamic> ? PlansStruct.fromMap(data) : null;
 
-  Map<String, dynamic> toMap(item) => {
+  Map<String, dynamic> toMap() => {
         'name': _name,
         'date': _date,
         'updates': _updates,
@@ -143,7 +144,7 @@ class PlansStruct extends FFFirebaseStruct {
       );
 
   @override
-  String toString() => 'PlansStruct(${toMap(0)})';
+  String toString() => 'PlansStruct(${toMap()})';
 
   @override
   bool operator ==(Object other) {
@@ -233,7 +234,7 @@ Map<String, dynamic> getPlansFirestoreData(
   if (plans == null) {
     return {};
   }
-  final firestoreData = mapToFirestore(plans.toMap(0));
+  final firestoreData = mapToFirestore(plans.toMap());
 
   // Add any Firestore field values
   plans.firestoreUtilData.fieldValues.forEach((k, v) => firestoreData[k] = v);

@@ -43,7 +43,7 @@ class HomePageModel extends FlutterFlowModel {
   // Stores action output result for [Backend Call - API (sample)] action in Button widget.
   ApiCallResponse? apiResulttgn;
   // Stores action output result for [Custom Action - convertJsonToDataType] action in Button widget.
-  List<PlansStruct>? lIst;
+  List<Plans1Struct>? lIst;
 
   /// Initialization and disposal methods.
 

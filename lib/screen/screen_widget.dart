@@ -89,8 +89,10 @@ class _ScreenWidgetState extends State<ScreenWidget> {
                       ).then((value) => setState(() {}));
                     } else {
                       setState(() {
-                        FFAppState().compare =
-                            FFAppState().plansList.toList().cast<PlansStruct>();
+                        FFAppState().compare = FFAppState()
+                            .plansList
+                            .toList()
+                            .cast<Plans1Struct>();
                       });
 
                       context.pushNamed(
@@ -155,22 +157,22 @@ class _ScreenWidgetState extends State<ScreenWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Text(
-                                    plansItem.name,
+                                    plansItem.value.name,
                                     style:
                                         FlutterFlowTheme.of(context).bodyMedium,
                                   ),
                                   Text(
-                                    plansItem.date,
+                                    plansItem.value.date,
                                     style:
                                         FlutterFlowTheme.of(context).bodyMedium,
                                   ),
                                   Text(
-                                    plansItem.updates,
+                                    plansItem.value.updates,
                                     style:
                                         FlutterFlowTheme.of(context).bodyMedium,
                                   ),
                                   Text(
-                                    plansItem.string,
+                                    plansItem.value.string,
                                     style:
                                         FlutterFlowTheme.of(context).bodyMedium,
                                   ),
